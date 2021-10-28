@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import Products from "./Products";
 
-const Command = () => {
+const Command = ({
+  match: {
+    params: { id }
+  }
+}) => {
+  console.log(id);
+  console.log(props);
   let counter = 0;
   const [product, setProduct] = useState({ name: "Kebab", price: "5" });
   const [products, setProducts] = useState([]);
