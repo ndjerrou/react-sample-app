@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import Products from "./Products";
+import Input from "./Input";
 
-const Command = ({
-  match: {
-    params: { id }
-  }
-}) => {
-  console.log(id);
-  console.log(props);
+const Command = () => {
   let counter = 0;
   const [product, setProduct] = useState({ name: "Kebab", price: "5" });
   const [products, setProducts] = useState([]);
@@ -35,28 +30,10 @@ const Command = ({
         <form onSubmit={handleSubmit}>
           <div className="form-group" style={{ marginBottom: "20px" }}>
             <div className="form-control">
-              <label htmlFor="name">
-                Name :
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={product.name}
-                  onChange={handleChange}
-                />
-              </label>
+              <Input name="name" value={product} handleChange={handleChange} />
             </div>
             <div className="form-control">
-              <label htmlFor="price">
-                Price :
-                <input
-                  type="text"
-                  id="price"
-                  name="price"
-                  value={product.price}
-                  onChange={handleChange}
-                />
-              </label>
+              <Input name="price" value={product} handleChange={handleChange} />
             </div>
           </div>
           <button className="btn btn-primary">Add new product</button>
