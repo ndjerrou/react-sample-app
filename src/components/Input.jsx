@@ -1,6 +1,6 @@
 import React from "react";
 
-function Input({ product, handleChange }) {
+function Input({ value: product, handleChange }) {
   return (
     <>
       <label htmlFor="name">
